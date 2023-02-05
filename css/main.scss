@@ -1,0 +1,107 @@
+$background: #807ECE;
+$calculator-background: #2D2A37;
+$accent-button: #462878;
+$primary-text: #EBEBEB;
+$secundary-text: #6B6B6B;
+$text-accent: #975DFA;
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    background-color: $background;
+}
+
+@mixin button-base(){
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
+    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06);
+    font-size: 1.5rem;
+    color: $primary-text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.letter-options{
+        text-transform: uppercase;
+    }
+    
+    &.accent-btn{
+        background-color: $accent-button;
+        font-size: 1.75rem;
+    }
+
+    &:hover { 
+        cursor: pointer; 
+    }
+}
+
+.container{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator{
+    width: 22.2rem;
+    height: 35.3rem;
+    background-color: $calculator-background;
+    border-radius: 48px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 188px 52px rgba(0, 0, 0, 0.01), 0px 120px 48px rgba(0, 0, 0, 0.04), 0px 68px 41px rgba(0, 0, 0, 0.15), 0px 30px 30px rgba(0, 0, 0, 0.26), 0px 8px 17px rgba(0, 0, 0, 0.29), inset 0px 6px 8px rgba(255, 255, 255, 0.1), inset 0px -4px 5px rgba(0, 0, 0, 0.22);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    #display{
+        margin: 3.3rem 2rem 0 2.25rem;
+        width: 18rem;
+        height: 5.3rem;
+
+        & #typed{
+            color: $secundary-text;
+            text-align: right;
+            margin-bottom: .5rem;
+        }
+
+        & #result{
+            color: $primary-text;
+            font-size: 2.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & > i{
+                color: $secundary-text;
+            }
+        }
+    }
+
+    #keyboard{
+        margin-top: 1.6rem;
+        width: 18.25rem;
+        height: 23rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .button{
+            @include button-base();
+
+            &:first-child{
+                color: $text-accent;
+            }
+        }
+    }
+}
