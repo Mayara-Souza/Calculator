@@ -103,7 +103,7 @@ body{
         justify-content: space-between;
         flex-wrap: wrap;
 
-        .button{
+        & button:nth-of-type(n){
             @include button-base();
 
             &:first-child{

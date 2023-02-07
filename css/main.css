@@ -57,7 +57,7 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-#calculator #keyboard .button {
+#calculator #keyboard button:nth-of-type(n) {
   width: 4rem;
   height: 4rem;
   border: none;
@@ -71,20 +71,20 @@ body {
   justify-content: center;
   transition: 0.3s linear;
 }
-#calculator #keyboard .button.letter-options {
+#calculator #keyboard button:nth-of-type(n).letter-options {
   text-transform: uppercase;
 }
-#calculator #keyboard .button.accent-btn {
+#calculator #keyboard button:nth-of-type(n).accent-btn {
   background-color: #462878;
   font-size: 1.75rem;
 }
-#calculator #keyboard .button:hover {
+#calculator #keyboard button:nth-of-type(n):hover {
   cursor: pointer;
 }
-#calculator #keyboard .button:active {
+#calculator #keyboard button:nth-of-type(n):active {
   transform: scale(0.85);
   box-shadow: 3px 2px 25px 1px rgba(0, 0, 0, 0.2509803922);
 }
-#calculator #keyboard .button:first-child {
+#calculator #keyboard button:nth-of-type(n):first-child {
   color: #975DFA;
 }/*# sourceMappingURL=main.css.map */
