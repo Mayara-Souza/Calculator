@@ -21,7 +21,8 @@ operators.forEach(operator =>{
 })
 
 function displayTyping(cliked){ 
-    if((cliked.classList.contains("number")) && (cliked.value !== "coma")){
+    if((cliked.classList.contains("number")) && 
+        (cliked.value !== "coma")){
         aux.push(cliked.value);
         showTyped.innerText += cliked.value;
     }
