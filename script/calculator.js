@@ -21,13 +21,24 @@ operators.forEach(operator =>{
 })
 
 function displayTyping(cliked){ 
-    if(cliked.classList.contains("number")){
+    if((cliked.classList.contains("number")) && (cliked.value !== "coma")){
         aux.push(cliked.value);
         showTyped.innerText += cliked.value;
     }
 
+    if(cliked.value == "coma"){
+        aux.push(".");
+        showTyped.innerText += ","; 
+    }
+
+    if(cliked.value == "plus-minus"){
+        aux.push("-");
+        showTyped.innerText += "-"; 
+    }
+
     if((cliked.classList.contains("operator")) 
-        && (!cliked.classList.contains("letter-options"))){
+        && (!cliked.classList.contains("letter-options"))
+        && (cliked.value !== "plus-minus")){
         if(cliked.value == "="){
             numberB = aux.join("");
             showTyped.innerText += cliked.value;
@@ -62,9 +73,30 @@ function displayResult(result){
 function calculate(firstNum, operator, secNum){
     firstNum = parseFloat(firstNum);
     secNum = parseFloat(secNum);
+    console.log(firstNum, secNum);
     switch(operator){
         case "+":
             result = (firstNum + secNum);
+            result = result.toString();
+            displayResult(result);
+            break;
+        case "-":
+            result = (firstNum - secNum);
+            result = result.toString();
+            displayResult(result);
+            break;
+        case"*":
+            result = (firstNum * secNum);
+            result = result.toString();
+            displayResult(result);
+            break;
+        case"/":
+            result = (firstNum / secNum);
+            result = result.toString();
+            displayResult(result);
+            break;
+        case"%":
+            result = (firstNum/100 * secNum);
             result = result.toString();
             displayResult(result);
             break;
@@ -80,5 +112,6 @@ function clearLast(){
 
 function clearAll(){
     aux = aux.slice(aux.length, -1);
-    showTyped.innerHTML = aux; 
+    showResult.innerText = 0;
+    showTyped.innerText = aux; 
 }
