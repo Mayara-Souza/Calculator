@@ -7,6 +7,7 @@
 * SASS (SCSS)
 * Javascript
 
-
-
-<img src="./printScreen/image.png" width="410px"/>
+<div align=center>
+  <img src="./printScreen/image.png" width="320px"/>
+  <img src="./printScreen/calculatorgif"/>
+</div>
