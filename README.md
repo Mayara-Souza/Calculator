@@ -1,9 +1,10 @@
 # Calculator
 
-### Desafio #boracodar @Rocketseat
+### Desafio #boracodar [@Rocketseat](https://boracodar.dev)
 
 ## Calculadora criada com:
 * HTML5 Semântico
+* Animações
 * SASS (SCSS)
 * Javascript
 
